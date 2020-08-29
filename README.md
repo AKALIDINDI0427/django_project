@@ -14,6 +14,8 @@
 pip install django==2.2.7 it will uninstall and install specific version
 django-admin startproject ecommerce - will create a skeleton of project
 python manage.py runserver - This is to run the server locally
-python manage.py dbshell - to go to db 
+python manage.py dbshell - to go to db
 python manage.py migrate - will create tables bases on models
+python manage.py shell -  Will go to python shell
+
 
