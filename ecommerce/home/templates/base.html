@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,16 +108,16 @@ element.style {
 <div class="topnav" style="position: relative;" id="topnav">
   <div style="overflow:auto;">
     <div style="width:100%;overflow:hidden;height:44px;">
-      <a class="w3-bar-item w3-button" href="/html/RequestAQuote.asp" class="nav-a" title="REQUEST A QUOTE">REQUEST A QUOTE</a>
-      <a class="w3-bar-item w3-button" href="/html/Calender.asp" class="nav-a" title="CALENDER">AVAILABILITY</a>
-      <a class="w3-bar-item w3-button" href="/html/Sale.asp" class="nav-a" title="SALE">USED ITEMS FOR SALE</a>
-      <a class="w3-bar-item w3-button" href="/html/ContactUs.asp" class="nav-a" title="CONTACT US">CONTACT US</a>
-      <a class="w3-bar-item w3-button" href="/html/Testimonials.asp" class="nav-a" title="TESTIMONIALS">TESTIMONIALS</a>
+      <a class="w3-bar-item w3-button" href="/RequestAQuote" target="_blank" class="nav-a" title="REQUEST A QUOTE">REQUEST A QUOTE</a>
+      <a class="w3-bar-item w3-button" href="/Calender" class="nav-a" title="CALENDER">AVAILABILITY</a>
+      <a class="w3-bar-item w3-button" href="/Sale" class="nav-a" title="SALE">USED ITEMS FOR SALE</a>
+      <a class="w3-bar-item w3-button" href="/ContactUs" class="nav-a" title="CONTACT US">CONTACT US</a>
+      <a class="w3-bar-item w3-button" href="/Testimonials" class="nav-a" title="TESTIMONIALS">TESTIMONIALS</a>
     <div>
   </div>
 </div>
 
-<img src="Moon.JPG" alt="Planets" usemap="#planetmap">
+<img src="{% static "Home1.jpg" %}" alt="Friends" style="width:1500px;height:1000px;" usemap="#planetmap">
 
 <!--<map name="planetmap">-->
 <!--  <area shape="rect" coords="0,0,82,126" alt="Sun" href="information_about_the_sun.htm" download>-->

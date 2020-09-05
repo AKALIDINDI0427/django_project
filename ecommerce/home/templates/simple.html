@@ -1,0 +1,6 @@
+  <form method="post">
+      {% csrf_token %}
+      {{ formkey.username }} {{ formkey.errors }}
+      {{ formkey.password }}
+      <button type="submit">Sign up</button>
+  </form>

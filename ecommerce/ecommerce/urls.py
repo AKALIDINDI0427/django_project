@@ -15,11 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from home.views import home_page, new_home_page, home_form
+from home.views import home_page, new_home_page, HForm, Calendar, Sale, ContactUs, Testimonials, QForm
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', home_page)
+    # path('', home_page)  # home page
     # path('', new_home_page)
-    path('', home_form)
+    # path('', home_form)
+    path('', HForm.as_view()),
+    path('RequestAQuote/', QForm.as_view()),
+    path('Calender/', Calendar),
+    path('Sale/', Sale),
+    path('ContactUs/', ContactUs),
+    path('Testimonials', Testimonials),
 ]
