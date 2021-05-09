@@ -13,6 +13,7 @@ class HomeDetails(models.Model):
     class Meta:
         db_table = "home_details"
 
+
 class QuoteDetails(models.Model):
     dropdown = [
         (None, "--None--"),
@@ -31,4 +32,48 @@ class QuoteDetails(models.Model):
     date = models.CharField(max_length=15)
 
 
+# class ContactDetails(models.Model):
+#     HOW_DID_YOU_HEAR_CHOICES = [(None, "--None--"),
+#                                 ("internet", "Internet"),
+#                                 ("friend/relative", "Friend/Relative"),
+#                                 ("socialnetworking", "Social Networking"),
+#                                 ("advertisement", "Advertisement")]
+#
+#     first_name = models.CharField(max_length=100)
+#     last_name = models.CharField(max_length=100)
+#     email = models.EmailField()
+#     phone = models.IntegerField()
+#     project_type = models.CharField(max_length=100)
+#     date = models.DateField()
+#     venue = models.CharField(max_length=100)
+#     budget = models.IntegerField()
+#     guests_count = models.IntegerField()
+#     how_did_you_hear = models.CharField(max_length=20, choices=HOW_DID_YOU_HEAR_CHOICES)
+#     questions = models.TextField(max_length=250)
+#
+#     class Meta:
+#         db_table = "contact_details"
+
+
+class ContactDetailsTable(models.Model):
+    HOW_DID_YOU_HEAR_CHOICES = [("None", "--None--"),
+                                ("internet", "Internet"),
+                                ("friend/relative", "Friend/Relative"),
+                                ("socialnetworking", "Social Networking"),
+                                ("advertisement", "Advertisement")]
+
+    firstname = models.CharField(max_length=100)
+    lastname = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.IntegerField()
+    project = models.CharField(max_length=100)
+    date = models.DateField()
+    venue = models.CharField(max_length=100)
+    budget = models.IntegerField()
+    guests = models.IntegerField()
+    aboutme = models.CharField(max_length=17, choices=HOW_DID_YOU_HEAR_CHOICES)
+    questions = models.CharField(max_length=2000)
+
+    class Meta:
+        db_table = "contact_details"
 

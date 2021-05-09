@@ -1,0 +1,156 @@
+{% load static %}
+
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Contact</title>
+	<link rel="stylesheet" href="{% static 'css/contact-styles.css' %}">
+</head>
+
+<body>
+	<header>
+	  <a class="site-logo">
+			<img class="logo" src="{% static 'images/Watermark_new_2.png' %}">
+		</a>
+	  <nav class="site-nav">
+			<ul>
+				<li><a href="/">PORTFOLIO</a></li>
+				<li><a href="/AboutMe">ABOUT ME</a></li>
+				<li><a href="/Contact">CONTACT</a></li>
+			</ul>
+		</nav>
+</header>
+</body>
+	
+<main>
+	<div class="Contact-info-wrapper">
+		<div class="Contact-content">
+			<h1 class="details">Contact</h1>
+			<p class="details">Have a question?</p>
+			<p class="details">Thinking about booking a private session?</p>
+			<p class="details">Please do not hesitate to reach out for any reason -- email, call, text, or just fill out the form below and hit "submit".</p>
+			<p class="details">email: ajaykr.555@gmail.com</p>
+			<p class="details">phone: +1(437) 234-7238</p>
+		</div>
+	</div>
+	<div class="wrapper">
+		<div class="contact-container">
+			<form class="contact-details" method="POST">
+				{% csrf_token %}
+			  <div class="field-list">
+				  <div class="form-item field">
+					  <label>Name
+					  		<span class = "required">*</span>
+					  </label>
+				    <input class="field-element text" type="text" name="firstname" placeholder="First Name" {% if form.is_bound %}value="{{ form.firstname.value}} {% endif%}">
+					  {% for error in form.firstname.errors %}
+					  	<small class="text-danger">{{ error }}</small>
+					  {% endfor %}
+					<input class = "field-element text" type="text" name="lastname" placeholder="Last Name" {% if form.is_bound %}value="{{ form.lastname.value}} {% endif%}">
+					  {% for error in form.lastname.errors %}
+					  	<small class="text-danger">{{ error }}</small>
+					  {% endfor %}
+			      </div>
+				  <div class="form-item field">
+					  <label>Email
+					  		<span class = "required">*</span>
+					  </label>
+				    <input class = "field-element text" name="email" type="email" {% if form.is_bound %}value="{{ form.email.value}} {% endif %}">
+					  {% for error in form.email.errors %}
+					  	<small class="text-danger">{{ error }}</small>
+					  {% endfor %}
+				  </div>
+				  <div class="form-item field">
+					  <label>Phone
+					  		<span class = "required">*</span>
+					  </label>
+					  <input class = "field-element text" name="phone" type="tel" {% if form.is_bound %}value="{{ form.phone.value}} {% endif %}">
+					  {% for error in form.phone.errors %}
+					  	<small class="text-danger">{{ error }}</small>
+					  {% endfor %}
+			      </div>				  
+				  <div class="form-item field">
+					  <label>Project Type/Occassion
+					  		<span class = "required">*</span>
+					  </label>
+				    <input class = "field-element text" name="project" type="text" {% if form.is_bound %}value="{{ form.project.value}} {% endif %}">
+					  {% for error in form.project.errors %}
+					  	<small class="text-danger">{{ error }}</small>
+					  {% endfor %}
+			      </div>	
+				  <div class="form-item field">
+					  <label>Date
+					  		<span class = "required">*</span>
+					  </label>
+					  <input class = "field-element text" name="date" type="date" placeholder="MM/DD/YYYY" {% if form.is_bound %}value="{{ form.date.value}} {% endif %}">
+					  {% for error in form.date.errors %}
+					  	<small class="text-danger">{{ error }}</small>
+					  {% endfor %}
+			      </div>
+				  <div class="form-item field">
+					  <label>Venue
+					  		<span class = "required">*</span>
+					  </label>
+					  <input class = "field-element text" name="venue" type="text" {% if form.is_bound %}value="{{ form.venue.value}} {% endif %}">
+					  {% for error in form.venue.errors %}
+					  	<small class="text-danger">{{ error }}</small>
+					  {% endfor %}
+			      </div>
+				  <div class="form-item field">
+					  <label>Do you have a photography budget set? If so, what is it?(in CAD)
+					  		<span class = "required">*</span>
+					  </label>
+					  <input class = "field-element text" name="budget" type="number" {% if form.is_bound %}value="{{ form.budget.value}} {% endif %}">
+					  {% for error in form.budget.errors %}
+					  	<small class="text-danger">{{ error }}</small>
+					  {% endfor %}
+			      </div>
+				  <div class="form-item field">
+					  <label>How many guests do you expect to attend?(approx.)
+					  		<span class = "required">*</span>
+					  </label>
+					  <input class = "field-element text" name="guests" type="number" {% if form.is_bound %}value="{{ form.guests.value}} {% endif %}">
+					  {% for error in form.guests.errors %}
+					  	<small class="text-danger">{{ error }}</small>
+					  {% endfor %}
+			      </div>
+				  <div class="form-item list">
+					  <label>How Did You Hear About Me?
+					  </label>
+					  <p><select class="field-element picklist" name="aboutme">
+						  <option value="None">--None--</option>
+						  <option value="Internet">Internet</option>
+						  <option value="Friend/Relative">Friend/Relative</option>
+						  <option value="Social Networking">Social Networking</option>
+						  <option value="Advertisement">Advertisement</option>
+						  {% if form.is_bound %}{{ form.aboutme.value}} {% endif %}
+					  </select></p>
+					  {% for error in form.aboutme.errors %}
+					  	<small class="text-danger">{{ error }}</small>
+					  {% endfor %}
+			      </div>
+				  <div class="form-item textarea">
+					  <label>Any questions I can answer for you?
+					  </label>
+					  <p><textarea class = "field-element text-area" name="questions">{% if form.is_bound %}{{form.questions.value}} {% endif %}</textarea></p>
+			      </div>
+				  {% for error in form.questions.errors %}
+					  	<small class="text-danger">{{ error }}</small>
+				  {% endfor %}
+				  <input class="save" type="submit">
+				</div>
+			</form>
+		</div>
+	</div>	
+</main>
+
+	<footer>
+		<div class="footer-content">
+			<div class="footer-info">
+				<p class="footer-credit">Website design by AJ</p>
+				<p class="footer-legal">Copyright &copy; All rights reserved.</p>
+			</div>
+		</div>
+	</footer>
+</html>

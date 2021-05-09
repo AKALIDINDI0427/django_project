@@ -1,0 +1,90 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html,
+html * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: europa;
+  font-size: 1vw;
+  background: white;
+}
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  -webkit-transform: translate3d(0,0,0);
+          transform: translate3d(0,0,0);
+}
+a, a:visited {
+    color: inherit;
+}
+header {
+  position: fixed;
+  padding: 0.3em;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+/*	background-color: #DAAD86;*/
+}
+.site-logo {
+  position: relative;
+  display: block;
+  float: left;
+  width: 15.1em;
+}
+.site-logo img {
+  width: 15.1em;
+}
+.logo {
+  opacity: 1;
+}
+.site-nav {
+  position: relative;
+  float: right;
+  z-index: 400;
+  top: 0;
+  left: 0;
+  display: block !important;
+  width: 80%;
+  padding: .75em 5em 0 0;
+  opacity: .95;
+  background: none;
+}
+.site-nav ul {
+  list-style-type: none;
+  margin: 0;
+  text-align: right;
+}
+.site-nav ul li {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-left: 2.5em;
+}
+.site-nav ul li a {
+  font-size: 1em;
+  padding-bottom: .5em;
+  text-decoration: none;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+/*  color:;*/
+  -webkit-transition: color .3s;
+  transition: color .3s;
+}
+
+.site-nav ul li a:hover {
+  outline: none;
+  border-bottom: 1px solid white;
+}
+
+.thankyou-note h1{
+	position: relative;
+	padding: 20% 15% 0% 20%;
+	font-family: europa;
+}
